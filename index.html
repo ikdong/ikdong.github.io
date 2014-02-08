@@ -1,3 +1,179 @@
 <html>
-	<body><h1>my first page</h1></body>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" /> 
+	
+	<title>IKDong.com</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/SyntaxHighlighter.css"></link>
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/sticky-footer-navbar.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<style>
+		.section{
+			font-size : 15px;
+			color: #000000;
+		}
+		
+		.section-margin{
+			margin-left: 40px;
+		}
+		
+		a{
+			color: #000000;
+			font-family: "微软雅黑", 'Microsoft Yahei', STXihei,"黑体", arial, sans-serif;
+		}
+		
+		body {
+			background-image:url('img/cream.png');
+			background-repeat:repeat;
+			background-position: center;
+			font-family: "微软雅黑", 'Microsoft Yahei', STXihei,"黑体", arial, sans-serif;
+		}
+
+		span {
+			font-family: "微软雅黑", 'Microsoft Yahei', STXihei,"黑体", arial, sans-serif;
+		}
+	</style>
+
+</head>
+
+<body style>
+	<!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">IKDong.com</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">主页</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#contact">联系我</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div>
+
+      <!-- Begin page content -->
+      <div class="container">
+		<div>
+               <div>
+                  <h2 class="title"><a name="d43866e1"></a>Android Style和Theme</h2>
+               </div>
+               <div>
+                  <div class="author">
+                     <h3 class="author"><span class="surname">董欢欢</span></h3>
+                  </div>
+               </div>
+               <div>
+                  <p>版本 1.0  </p>
+               </div>
+               <div>
+                  <p class="pubdate">2014年2月7日</p>
+               </div>
+			   <BR>
+               <div>
+                  <div class="abstract"><a name="abstract"></a><p class="title"><b>How to install the Android development tools</b></p>
+                     <p> This document describes how to install and configure the
+                        Android development
+                        tools.
+                        
+                     </p>
+                  </div>
+               </div>
+            </div>
+			
+        <div class="jumbotron" style="width: 600;">
+			<h3><b><span>目录</span></b></h3>
+			<dl>
+               <dt><span class="section"><a href="#installoverview">1. 安装Android开发工具</a></span></dt>
+               <dt><span class="section"><a href="#installrequirements">2. 环境要求</a></span></dt>
+               <dd class="section-margin">
+                  <dl>
+                     <dt><span class="section"><a href="#installation_system">2.1. 系统要求</a></span></dt>
+                     <dt><span class="section"><a href="#installation_linux64">2.2. 对于使用64Linux系统的要求</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="section"><a href="#installation">3. 安装Android开发者工具</a></span></dt>
+               <dd class="section-margin">
+                  <dl>
+                     <dt><span class="section"><a href="#adtinstallation_full">3.1. Download packaged Android Developer Tools</a></span></dt>
+                     <dt><span class="section"><a href="#installation_start">3.2. Stand-alone ADT installation</a></span></dt>
+                     <dt><span class="section"><a href="#installation_update">3.3. Update an existing Eclipse IDE</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="section"><a href="#androidapiversion_installation">4. Install Android SDK version</a></span></dt>
+               <dd class="section-margin">
+                  <dl>
+                     <dt><span class="section"><a href="#androidapiversion_sdk">4.1. Using the Android SDK manager</a></span></dt>
+                     <dt><span class="section"><a href="#adtinstallation_supportlibrary">4.2. Install support library</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="section"><a href="#tutorialemulator">5. Exercise: Create and start Android Virtual Device</a></span></dt>
+               <dd class="section-margin">
+                  <dl>
+                     <dt><span class="section"><a href="#tutorialemulator_target">5.1. Target</a></span></dt>
+                     <dt><span class="section"><a href="#tutorialemulator1">5.2. Create AVD</a></span></dt>
+                     <dt><span class="section"><a href="#tutorialemulator2">5.3. Start your AVD</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="section"><a href="#androidstudio">6. Android Studio</a></span></dt>
+               <dd class="section-margin">
+                  <dl>
+                     <dt><span class="section"><a href="#androidstudio_ide">6.1. Android Studio based on IntelliJ IDEA</a></span></dt>
+                     <dt><span class="section"><a href="#androidstudio_installation">6.2. Installation</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="section"><a href="#updateeclipseide">7. Updating an Eclipse IDE for Android development</a></span></dt>
+               <dd class="section-margin">
+                  <dl>
+                     <dt><span class="section"><a href="#installation_eclipseadt">7.1. Install ADT Plug-ins and Android SDK</a></span></dt>
+                     <dt><span class="section"><a href="#installation_androidsdk">7.2. Manual installation of the Android SDK</a></span></dt>
+                  </dl>
+               </dd>
+            </dl>
+		</div>
+		
+		<div class="section">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title"><a name="installoverview"></a>1.&nbsp;Installation of the Android development tools
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>
+               Google provides tools to develop Android applications. You can
+               choose between Eclipse or IntelliJ based tools.
+               
+            </p>
+			<pre style="background:#fdf6e3;color:#586e75"><span style="color:#a57800">public</span> <span style="color:#a57800">class</span> <span style="color:#268bd2">Test</span>{
+    <span style="color:#a57800">private</span> <span style="color:#073642;font-weight:700">String</span> name;
+}
+			</pre>
+         </div>
+      </div>
+		
+	</div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+      </div>
+    </div>
+</body>
 </html>
