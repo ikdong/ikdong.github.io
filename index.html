@@ -90,28 +90,27 @@
       <!-- Begin page content -->
       <div class="container">
 		<div>
-               <div>
-                  <h2 class="title"><a name="d43866e1"></a>Android Style和Theme</h2>
-               </div>
-               <div>
-                  <div class="author">
-                     <h3 class="author"><span class="surname">董欢欢</span></h3>
-                  </div>
-               </div>
-               <div>
-                  <p>版本 1.0  </p>
-               </div>
-               <div>
-                  <p class="pubdate">2014年2月7日</p>
-               </div>
-			   <BR>
-               <div>
-                  <div class="abstract">
-                     <p>本文主要介绍Style和Theme的定义，并说明如何在Android应用中创建使用Syle和Theme</p>
-                  </div>
-               </div>
-            </div>
-			
+           <div>
+              <h2 class="title"><a name="d43866e1"></a>Android Style和Theme</h2>
+           </div>
+           <div>
+              <div class="author">
+                 <h3 class="author"><span class="surname">董欢欢</span></h3>
+              </div>
+           </div>
+           <div>
+              <p>版本 1.0  </p>
+           </div>
+           <div>
+              <p class="pubdate">2014年2月7日</p>
+           </div>
+           <div>
+              <div class="abstract">
+                 <p>本文主要介绍Style和Theme的定义，并说明如何在Android应用中创建使用Syle和Theme</p>
+              </div>
+           </div>
+        </div>
+
         <div class="jumbotron" style="width: 600;">
 			<h3><b><span>目录</span></b></h3>
 			<dl>
@@ -136,16 +135,11 @@
 		
 		<div class="section">
             <div class="titlepage">
-               <div>
-                  <div>
-                     <h2 class="title"><a name="installoverview"></a>1.&nbsp;Style和Theme的定义</h2>
-                  </div>
-               </div>
+               <h2 class="title"><a name="installoverview"></a>1.&nbsp;Style和Theme的定义</h2>
             </div>
             <p>
-               Style是指一些能够定义View和Window外观的属性集合。一个View或者Window的外观通过属性来定义，这些属性如高度、字体大小或者是背景颜色等，Style通过定义这些属性的值来定制View或者是Window的外观。Style被定义在一个XML资源文件中，目的是为了从具体的布局相分离。           
-            </p>
-			
+               	Style是指一些能够定义View和Window外观的属性集合。一个View或者Window的外观通过属性来定义，这些属性如高度、字体大小或者是背景颜色等，Style通过定义这些属性的值来定制View或者是Window的外观。Style被定义在一个XML资源文件中，目的是为了从具体的布局相分离。           
+            </p>			
 			<p>
 				Android中使用Style的目的同在Web设计中使用CSS的理由相一致，就是为了能够将设计和具体的内容相隔离。
 			</p>
@@ -158,14 +152,45 @@
     <span style="color:#89bdff">android:typeface</span>=<span style="color:#65b042">"monospace"</span>
     <span style="color:#89bdff">android:text</span>=<span style="color:#65b042">"@string/hello"</span>/></span>
 </pre>
-		<span>通过使用Style，也可以是这样：</span>
+			<span>通过使用Style，也可以是这样：</span>
 <pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">TextView</span>
     <span style="color:#89bdff">style</span>=<span style="color:#65b042">"@style/CodeFont"</span>
     <span style="color:#89bdff">android:text</span>=<span style="color:#65b042">"@string/hello"</span>/></span>
 </pre>
-		<p>所有同TextView外观有关的属性都被从布局中去除，并统一放入一个称之为CodeFont的Style中，这个Style通过TextView的style属性来使用。</p>
-		<p>Theme本质上也是一个Style，只是它适用于整个Activity或Application，而不是单个View。当一个Style作为Theme来使用时，Activity或者是Application中所有的View都会受到影响。例如，将CodeFont作为Theme应用于某个Activity，那所有该Activity中TextView的字体颜色会变成绿色。</p>
-         </div>
+			<p>所有同TextView外观有关的属性都被从布局中去除，并统一放入一个称之为CodeFont的Style中，这个Style通过TextView的style属性来使用。</p>
+			<p>
+				Theme本质上也是一个Style，只是它适用于整个Activity或Application，而不是单个View。当一个Style作为Theme来使用时，Activity或者是Application中所有的View都会受到影响。例如，将CodeFont作为Theme应用于某个Activity，那所有该Activity中TextView的字体颜色会变成绿色。
+			</p>
+
+			<p>
+				在定义style之前，首先我们需要在项目的res/values目录下创建一个xml文件。文件的名字可以随意定义，但是扩展名必须是xml。同时，该xml文件的根节点必须是<resource>节点。之后，我们就可以在该xml文件中定义Style。下面的示例定义了一个典型的Style：
+			</p>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;?<span style="color:#89bdff">xml</span> <span style="color:#89bdff">version</span>=<span style="color:#65b042">"1.0"</span> <span style="color:#89bdff">encoding</span>=<span style="color:#65b042">"utf-8"</span>?></span>
+<span style="color:#89bdff">&lt;<span style="color:#89bdff">resources</span>></span>
+    &lt;<span style="color:#e0c589">style</span> <span style="color:#e0c589">name</span>=<span style="color:#65b042">"CodeFont"</span><span style="color:#e0c589">parent</span>=<span style="color:#65b042">"@android:style/TextAppearance.Medium"</span>>
+        &lt;item name="android:layout_width">fill_parent&lt;/item>
+        &lt;item name="android:layout_height">wrap_content&lt;/item>
+        &lt;item name="android:textColor">#00FF00&lt;/item>
+        &lt;item name="android:typeface">monospace&lt;/item>
+    &lt;/<span style="color:#cda869">style</span>>
+&lt;/resources>
+</pre>
+			<p>
+				定义一个style，需要添加一个&lt;style>元素，style的名称则通过该元素的name属性来定义（name的属性值必须是唯一且必须的）。接着我们通过添加向元素&lt;style>添加子节点&lt;item>来定义属性集。子节点&lt;item>用来定义style中的每一个属性，&lt;item>元素中的name属性表示style中的属性。而元素&lt;item>的值可以是字符串、十六进制的颜色代码或者是对其它资源的引用。
+			</p>
+
+			<p>
+				每一个&lt;resource>的子节点（即&lt;style>元素）都会在编译时被转换成一个应用资源对象，这个对象则通过&lt;style>元素的name属性被引用。例如最开始介绍的CodeFont示例中，引用方式为@style/CodeFont。
+			</p>
+
+			<p>
+				在&lt;style>元素中parent属性是可选的，该属性用于定义从其它style进行继承。继承之后，你还可以覆盖之前继承的属性。
+			</p>
+			
+			<p>
+				这里需要注意的是，当一个style和theme在XML定义上是一样的，没有区别。它们的区别在于应用的范围不同，当应用于单个View时称之为style，而在应用于Activity或整个Application时则称之为Theme。
+			</p>
+			
       </div>
 		
 	</div>
