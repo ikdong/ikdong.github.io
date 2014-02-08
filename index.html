@@ -29,13 +29,32 @@
 		}
 		
 		body {
-			background-image:url('img/cream.png');
+			background-image:url('img/fabric.png');
 			background-repeat:repeat;
 			background-position: center;
 			font-family: "微软雅黑", 'Microsoft Yahei', STXihei,"黑体", arial, sans-serif;
 		}
 
+		#home-title{
+			font-size: 40px;
+			margin-left: 10px;
+		}
+
+		.nav-bk{
+			background-image:url('img/moulin.png');
+			background-repeat:repeat;
+			background-position: center;
+		}
+
+		pre {
+			border-radius: 0;
+		}
+
 		span {
+			font-family: "微软雅黑", 'Microsoft Yahei', STXihei,"黑体", arial, sans-serif;
+		}
+
+		h2 {
 			font-family: "微软雅黑", 'Microsoft Yahei', STXihei,"黑体", arial, sans-serif;
 		}
 	</style>
@@ -47,15 +66,15 @@
     <div id="wrap">
 
       <!-- Fixed navbar -->
-      <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
+      <div class="navbar navbar-fixed-top navbar-inverse nav-bk" role="navigation">
+		<div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">IKDong.com</a>
+          <a class="navbar-brand" href="#">AndroiDev.com</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -65,7 +84,8 @@
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
-    </div>
+      </div>
+	  <br>
 
       <!-- Begin page content -->
       <div class="container">
@@ -86,12 +106,8 @@
                </div>
 			   <BR>
                <div>
-                  <div class="abstract"><a name="abstract"></a><p class="title"><b>How to install the Android development tools</b></p>
-                     <p> This document describes how to install and configure the
-                        Android development
-                        tools.
-                        
-                     </p>
+                  <div class="abstract">
+                     <p>本文主要介绍Style和Theme的定义，并说明如何在Android应用中创建使用Syle和Theme</p>
                   </div>
                </div>
             </div>
@@ -99,51 +115,22 @@
         <div class="jumbotron" style="width: 600;">
 			<h3><b><span>目录</span></b></h3>
 			<dl>
-               <dt><span class="section"><a href="#installoverview">1. 安装Android开发工具</a></span></dt>
-               <dt><span class="section"><a href="#installrequirements">2. 环境要求</a></span></dt>
+               <dt><span class="section"><a href="#installoverview">1. Style和Theme的定义</a></span></dt>
+			   <dd class="section-margin">
+				   <dl>
+					 <dt><span class="section"><a href="#installation_linux64">1.1. Style继承</a></span></dt>
+					 <dt><span class="section"><a href="#installation_linux64">1.2. 定义Style的属性</a></span></dt>
+				  </dl>
+			   </dd>
+               <dt><span class="section"><a href="#installrequirements">2. Style和Theme的使用</a></span></dt>
                <dd class="section-margin">
                   <dl>
-                     <dt><span class="section"><a href="#installation_system">2.1. 系统要求</a></span></dt>
-                     <dt><span class="section"><a href="#installation_linux64">2.2. 对于使用64Linux系统的要求</a></span></dt>
+                     <dt><span class="section"><a href="#installation_system">2.1. 将Style应用于View</a></span></dt>
+                     <dt><span class="section"><a href="#installation_linux64">2.2. 将Theme应用于Activity或Application</a></span></dt>
+                     <dt><span class="section"><a href="#installation_linux64">2.3. 基于平台的版本选择Theme</a></span></dt>
                   </dl>
                </dd>
-               <dt><span class="section"><a href="#installation">3. 安装Android开发者工具</a></span></dt>
-               <dd class="section-margin">
-                  <dl>
-                     <dt><span class="section"><a href="#adtinstallation_full">3.1. Download packaged Android Developer Tools</a></span></dt>
-                     <dt><span class="section"><a href="#installation_start">3.2. Stand-alone ADT installation</a></span></dt>
-                     <dt><span class="section"><a href="#installation_update">3.3. Update an existing Eclipse IDE</a></span></dt>
-                  </dl>
-               </dd>
-               <dt><span class="section"><a href="#androidapiversion_installation">4. Install Android SDK version</a></span></dt>
-               <dd class="section-margin">
-                  <dl>
-                     <dt><span class="section"><a href="#androidapiversion_sdk">4.1. Using the Android SDK manager</a></span></dt>
-                     <dt><span class="section"><a href="#adtinstallation_supportlibrary">4.2. Install support library</a></span></dt>
-                  </dl>
-               </dd>
-               <dt><span class="section"><a href="#tutorialemulator">5. Exercise: Create and start Android Virtual Device</a></span></dt>
-               <dd class="section-margin">
-                  <dl>
-                     <dt><span class="section"><a href="#tutorialemulator_target">5.1. Target</a></span></dt>
-                     <dt><span class="section"><a href="#tutorialemulator1">5.2. Create AVD</a></span></dt>
-                     <dt><span class="section"><a href="#tutorialemulator2">5.3. Start your AVD</a></span></dt>
-                  </dl>
-               </dd>
-               <dt><span class="section"><a href="#androidstudio">6. Android Studio</a></span></dt>
-               <dd class="section-margin">
-                  <dl>
-                     <dt><span class="section"><a href="#androidstudio_ide">6.1. Android Studio based on IntelliJ IDEA</a></span></dt>
-                     <dt><span class="section"><a href="#androidstudio_installation">6.2. Installation</a></span></dt>
-                  </dl>
-               </dd>
-               <dt><span class="section"><a href="#updateeclipseide">7. Updating an Eclipse IDE for Android development</a></span></dt>
-               <dd class="section-margin">
-                  <dl>
-                     <dt><span class="section"><a href="#installation_eclipseadt">7.1. Install ADT Plug-ins and Android SDK</a></span></dt>
-                     <dt><span class="section"><a href="#installation_androidsdk">7.2. Manual installation of the Android SDK</a></span></dt>
-                  </dl>
-               </dd>
+			   <dt><span class="section"><a href="#installrequirements">3. 使用Android平台中Style和Theme</a></span></dt>
             </dl>
 		</div>
 		
@@ -151,20 +138,33 @@
             <div class="titlepage">
                <div>
                   <div>
-                     <h2 class="title"><a name="installoverview"></a>1.&nbsp;Installation of the Android development tools
-                     </h2>
+                     <h2 class="title"><a name="installoverview"></a>1.&nbsp;Style和Theme的定义</h2>
                   </div>
                </div>
             </div>
             <p>
-               Google provides tools to develop Android applications. You can
-               choose between Eclipse or IntelliJ based tools.
-               
+               Style是指一些能够定义View和Window外观的属性集合。一个View或者Window的外观通过属性来定义，这些属性如高度、字体大小或者是背景颜色等，Style通过定义这些属性的值来定制View或者是Window的外观。Style被定义在一个XML资源文件中，目的是为了从具体的布局相分离。           
             </p>
-			<pre style="background:#fdf6e3;color:#586e75"><span style="color:#a57800">public</span> <span style="color:#a57800">class</span> <span style="color:#268bd2">Test</span>{
-    <span style="color:#a57800">private</span> <span style="color:#073642;font-weight:700">String</span> name;
-}
-			</pre>
+			
+			<p>
+				Android中使用Style的目的同在Web设计中使用CSS的理由相一致，就是为了能够将设计和具体的内容相隔离。
+			</p>
+
+			<span>比如在日常代码中，我们经常会创建这样的布局：</span>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">TextView</span>
+    <span style="color:#89bdff">android:layout</span>_width=<span style="color:#65b042">"fill_parent"</span>
+    <span style="color:#89bdff">android:layout</span>_height=<span style="color:#65b042">"wrap_content"</span>
+    <span style="color:#89bdff">android:textColor</span>=<span style="color:#65b042">"#00FF00"</span>
+    <span style="color:#89bdff">android:typeface</span>=<span style="color:#65b042">"monospace"</span>
+    <span style="color:#89bdff">android:text</span>=<span style="color:#65b042">"@string/hello"</span>/></span>
+</pre>
+		<span>通过使用Style，也可以是这样：</span>
+<pre style="background:#000;color:#f8f8f8"><span style="color:#89bdff">&lt;<span style="color:#89bdff">TextView</span>
+    <span style="color:#89bdff">style</span>=<span style="color:#65b042">"@style/CodeFont"</span>
+    <span style="color:#89bdff">android:text</span>=<span style="color:#65b042">"@string/hello"</span>/></span>
+</pre>
+		<p>所有同TextView外观有关的属性都被从布局中去除，并统一放入一个称之为CodeFont的Style中，这个Style通过TextView的style属性来使用。</p>
+		<p>Theme本质上也是一个Style，只是它适用于整个Activity或Application，而不是单个View。当一个Style作为Theme来使用时，Activity或者是Application中所有的View都会受到影响。例如，将CodeFont作为Theme应用于某个Activity，那所有该Activity中TextView的字体颜色会变成绿色。</p>
          </div>
       </div>
 		
@@ -172,7 +172,7 @@
 
     <div id="footer">
       <div class="container">
-        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+        <p class="text-muted credit">转载请标明出处.</p>
       </div>
     </div>
 </body>
