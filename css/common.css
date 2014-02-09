@@ -1,0 +1,51 @@
+.section{
+	font-size : 15px;
+	color: #000000;
+}
+
+.section-margin{
+	margin-left: 40px;
+}
+
+a{
+	color: #000000;
+	font-family: "Î¢ÈíÑÅºÚ", 'Microsoft Yahei', STXihei,"ºÚÌå", arial, sans-serif;
+}
+
+body {
+	background-repeat:repeat;
+	background-position: center;
+	font-family: "Î¢ÈíÑÅºÚ", 'Microsoft Yahei', STXihei,"ºÚÌå", arial, sans-serif;
+}
+
+#home-title{
+	font-size: 40px;
+	margin-left: 10px;
+}
+
+.nav-bk{
+	background-image:url('img/moulin.png');
+	background-repeat:repeat;
+	background-position: center;
+}
+
+pre {
+	border-radius: 0;
+}
+
+span {
+	font-family: "Î¢ÈíÑÅºÚ", 'Microsoft Yahei', STXihei,"ºÚÌå", arial, sans-serif;
+}
+
+h1 {
+	font-family: "Î¢ÈíÑÅºÚ", 'Microsoft Yahei', STXihei,"ºÚÌå", arial, sans-serif;
+	text-shadow: 0 1px #ccc;
+}
+
+h2 {
+	font-family: "Î¢ÈíÑÅºÚ", 'Microsoft Yahei', STXihei,"ºÚÌå", arial, sans-serif;
+}
+
+h3 {
+	font-family: "Î¢ÈíÑÅºÚ", 'Microsoft Yahei', STXihei,"ºÚÌå", arial, sans-serif;
+}
